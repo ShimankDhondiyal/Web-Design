@@ -1,0 +1,190 @@
+/* Write your CSS in here */
+:root {
+   --colorDarkSlateBlue: #294a71;
+   --colorBrownGrey: #979797;
+   --colorTrueWhite: #fff;
+   --colorTrueBlack: #000;
+   --colorDarkIndigo: #0c2139;
+   --colorWhite: #d8d8d8;
+   --colorGreyishBrown: #4a4a4a;
+   --colorVeryLightPink: #d2d2d2;
+
+   --siteBackground: var(--colorDarkSlateBlue);
+   --mastheadBackground: var(--colorDarkIndigo);
+   --logo: var(--colorTrueWhite);
+}
+html {
+   /* same as 10 pixels */
+   font-size: 62.5%;
+}
+body {
+   /* Don't delete this */
+   font-family: "Roboto", Arial, Helvetica, sans-serif;
+   background: var(--siteBackground);
+}
+.wrapper {
+   /* width: 1024px; */
+   margin: 0;
+}
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 20px;
+   border-bottom: 1px solid var(--colorBrownGrey);
+}
+header .logo {
+   color: var(--logo);
+   font-size: 3rem;
+   font-weight: 900;
+   padding: 0;
+   margin: 0;
+}
+header .avatar {
+   /* 50% 50% is positioning */
+   background: transparent url(../images/bruno-ewayu-D8Qm_GmKRbk-unsplash.jpg) 50% 50% no-repeat;
+   background-size: cover;
+   border-radius: 50%;
+   border: solid var(--colorBrownGrey) 3px;
+   height: 47px;
+   width: 47px;
+}
+header .nav-list {
+   list-style-type: none;
+   padding: 0;
+   display: flex;
+   font-size: 2rem;
+   color: var(--colorVeryLightPink);
+}
+header .nav-list a {
+   color: inherit;
+   text-decoration: none;
+   font-weight: 100;
+}
+header .nav-item {
+   padding: 0 8px;
+}
+header .nav-item:last-of-type {
+   padding-right: 0; 
+}
+header .nav-item:first-of-type {
+   padding-left: 0;
+}
+.masthead {
+   background-color: var(--mastheadBackground);
+   padding: 60px 60px;
+}
+.mediabox {
+   /* all in the same line so flexbox */
+   display: flex;
+   padding: 60 68px;
+   column-gap: 27px;
+}
+.mediabox:first-of-type .mediabox-visual {
+   order: 2;
+}
+.mediabox:first-of-type .mediabox-text {
+   order: 1;
+   text-align: right;
+   padding-right: 30px;
+}
+.mediabox-visual {
+   background: transparent url(../images/engin-akyurt-C11UKrFo4CQ-unsplash.jpg) 50% 50% no-repeat;
+   background-size: cover;
+   height: 217px;
+   width: 380px;
+   flex-shrink: 0;
+}
+.mediabox-text {
+   color: var(--colorTrueWhite);
+   font-size: 2.4rem;
+   line-height: 2;
+   padding-left: 30px;
+}
+.mediabox-text__headline {
+   font-size: 8rem;
+   font-weight: 100;
+   line-height: 1;
+   margin: 0;
+   padding: 0;
+   text-transform: uppercase;
+}
+.mediabox-text__summary {
+   margin: 0;
+   padding: 0;
+}
+.grid {
+   padding: 80px 136px;
+   border-bottom: 1px solid var(--colorBrownGrey);
+}
+.boxes {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   /* make this grid bc the child elements are the individual boxes */
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   column-gap: 75px;
+   row-gap: 75px;
+   grid-template-areas: 
+      "a b c"
+      "d e f";
+}
+.box {
+   background: var(--colorWhite);
+   color: var(--colorGreyishBrown);
+   display: flex;
+   font-size: 7.2rem;
+   justify-content: center;
+   align-items: center;
+   height: 200px;
+   width: 200px;
+   border: 1px solid var(--colorBrownGrey);
+}
+.boxes-1 .item-3 {
+   color: var(--colorWhite);
+   background: var(--colorGreyishBrown);
+}
+.boxes-2 .item-4,
+.boxes-1 .item-6,
+.boxes-3 .item-5 {
+   border-radius: 50%;;
+}
+.boxes-2 .item-1 {
+   grid-area: d;
+}
+.boxes-2 .item-2 {
+   grid-area: e;
+}
+.boxes-2 .item-3 {
+   grid-area: f;
+}
+.boxes-2 .item-4 {
+   grid-area: a;
+}
+.boxes-2 .item-5 {
+   grid-area: b;
+}
+.boxes-2 .item-6 {
+   grid-area: c;
+}
+
+.boxes-3 .item-1 {
+   grid-area: c;
+}
+.boxes-3 .item-2 {
+   grid-area: e;
+}
+.boxes-3 .item-3 {
+   grid-area: a;
+}
+.boxes-3 .item-4 {
+   grid-area: f;
+}
+.boxes-3 .item-5 {
+   grid-area: b;
+}
+.boxes-3 .item-6 {
+   grid-area: d;
+}
