@@ -1,0 +1,265 @@
+/*
+Browser sizes:
+
+min width: 0
+min width: 768
+min width: 1024
+min width: 1440
+
+*/
+:root {
+    --colorBackground: #25282b;
+    --colorCyan: #50e3c2;
+    --colorBlueGreen: #138a70;
+    --colorDescription: #dafcf5;
+    --colorHDBorder: #128a70;
+    --fontTitle: Oswald;
+    --fontDesctiption: SourceSansPro;
+}
+html,
+body {
+    background-color: var(--colorBackground);
+    font-size: 10px;
+    font-family: var(--fontDesctiption);
+    /* height: 100%;
+    width: 100%; */
+}
+.wrapper {
+    display: grid;
+    grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e";
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+}
+.rect {grid-area: a; width: 100%; height: 100%;}
+.rectangle {
+    /* grid-area: a; */
+    width: 100%;
+    height: .9rem;
+    background-color: var(--colorCyan);
+}
+.title {
+    grid-area: b;
+    display: flex;
+    margin-top: 3.1rem;
+}
+h1 {
+    color: var(--colorBlueGreen);
+    font-family: var(--fontTitle);
+    font-size: 3.6rem;
+    font-weight: 400;
+}
+.image {
+    grid-area: c;
+    background: url(../images/batel-studio-ttSRjiYG_WM-unsplash.jpg) 50% 50% no-repeat;
+    width: 9rem;
+    height: 9rem;
+    border: .3rem solid var(--colorCyan);
+    border-radius: 50%;
+    background-size: cover;
+    margin-bottom: 2.4rem; 
+  }
+.icons {
+    grid-area: d;
+    display: flex;
+    /* justify content does not work in firefox properly, so using column gap
+    (this is the exact opposite issue found in @media(>768) {.icons}) */
+    /* justify-content: space-evenly; */
+    column-gap: 2.3rem;
+}
+svg {
+    color: var(--colorCyan);
+}
+.text {
+    grid-area: e;
+    display: flex;
+    align-content: center;
+}
+.text p {
+    font-size: 2rem;
+    color: var(--colorDescription);
+    text-align: center;
+    margin-left: 1.4rem;
+    margin-right: 1.4rem;
+    line-height: 3.5rem;
+}
+@media (min-width: 768px) {
+    .wrapper {
+        grid-template-areas:
+        "a a a a"
+        "b c c c"
+        "d c c c";
+    }
+    .rectangle {display: none;}
+    .title {
+        grid-area: a;
+        width: 100%;
+        margin-top: 0;
+        justify-content: center;
+    }
+    h1 {
+        width: 90%;
+        text-align: center;
+        font-size: 6rem;
+        border-bottom: .4rem solid var(--colorCyan);
+        margin: 0;
+        margin-top: 2.4rem;
+    }
+    .image {
+        grid-area: b;
+        margin-left: 3.6rem;
+        margin-top: 5rem;
+        margin-bottom: 0%;
+        resize: vertical;
+        width: 16rem;
+        height: 16rem;
+        border-radius: 25%;
+    }
+    .text {
+        grid-area: c;
+        margin-right: 4.3rem;
+        margin-left: 3.2rem;
+    }
+    .text p {
+        margin-top: 3.7rem;
+        margin-left: 0%;
+        margin-right: 0%;
+        text-align: left;
+        font-size: 2.2rem;
+        /* line-height: 4.4rem; */
+        font-weight: 300;
+    }
+    .icons {
+        /* justify content works in firefox but not in safari so assuming that justify content is correct here
+        column gap works in both but is not centered so skipping this option */
+        /* column-gap: 3.2rem; */
+        justify-content: space-evenly;
+        width: 16rem;
+        height: 16rem;
+        margin-left: 3.6rem;
+        margin-top: 3.2rem;
+    }
+}
+@media (min-width: 1024px) {
+    .wrapper {
+        grid-template-areas:
+            "a a a a"
+            "b b c c";
+        /* margin-left: 3.5rem; */
+    }
+    .icons {
+        grid-area: a;
+        margin: 0;
+        padding: 0;
+        left: 50%;
+        margin-top: 2.3rem;
+        height: 12.3rem;
+    }
+    .title {
+        /* flex-direction: column; s */
+        grid-area: b;
+        /* width: 58.2rem; */
+        height: 9rem;
+    }
+    .title h1 {
+        /* width: 100%; */
+        text-align: right;
+        font-size: 5.5rem;
+        border: none;
+        margin: 0%;
+    }
+    .image {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 5rem;
+        grid-area: c;
+        width: 33rem;
+        height: 33rem;
+    }
+    .text {
+        grid-area: b;
+        margin: 0 0;
+    }
+    .text p {
+        text-align: right;
+        margin-top: 7.8rem;
+        margin-left: 3.5rem;
+        margin-right: 2.7rem;
+        top: 7.8rem;
+        font-size: 2rem;
+        line-height: 3.5rem;
+    }
+}
+@media (min-width: 1440px) {
+    .wrapper {
+        grid-template-areas:
+            "a b"
+            "c c";
+        padding-left: 15rem;
+        padding-right: 15rem;
+        padding-top: 26.3rem;
+    }
+    .image {
+        margin: 0 0 0 0;
+        grid-area: a;
+        border: .3rem solid var(--colorHDBorder);
+    }
+    .icons {
+        grid-area: c;
+        margin: 0 0 0 0;
+        align-items: center;
+    }
+    .title {
+        margin: 0 0 0 0;
+        /* margin-left: 4.7rem; */
+        height: 9rem;
+        width: 100%;
+        /* border-bottom: .2rem solid var(--colorCyan); */
+        justify-content: flex-start;
+    }
+    .title h1 {
+        text-align: left;
+        font-size: 6rem;
+        width: 100%;
+        margin-left: 4.7rem;
+        align-self: flex-start;
+    }
+    .text {
+        margin-top: 9rem;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .text p {
+        margin: 0 0 0 0;
+        margin-left: 4.7rem;
+        text-align: left;
+        line-height: 5.6rem;
+        font-size: 2.6rem;
+        font-weight: 200;
+    }
+    .rect {
+        grid-area: b;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .rectangle {
+        /* grid-area: b; */
+        display: flex;
+        height: .2rem;
+        margin-top: 8.2rem;
+        width: calc(100% - 4.7rem);
+        /* margin-left: 4.7rem;
+        margin-right: -4.7rem;
+        padding-right: -4.7rem; */
+        padding-left: 4.7rem;
+        /* margin-left: 2.7rem;
+        width: 75rem; */
+    }
+}
