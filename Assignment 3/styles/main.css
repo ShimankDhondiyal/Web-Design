@@ -1,0 +1,115 @@
+/* Write your CSS in here */
+:root {
+  --greyColor: #d8d8d8;
+  --formButtonText: #d1d1d1;
+  --brownGrey: #979797;
+  --white: #ffffff;
+  --reddyBrown: #690202;
+  --borderColor: #7d2424;
+  --textColor: #0e1c3a;
+  --formText: #999999;
+  --formButtonColor: #26283c;
+  --black85: rgba(0, 0, 0, 0.85);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --font: Helvetica;
+}
+html {
+  background-color: var(--white);
+  font-size: 10px;
+  font-family: var(--font);
+}
+.LHS {
+  position: absolute;
+  background: var(--greyColor);
+  height: calc(100%);
+  width: calc(50%);
+  border: .1rem solid var(--brownGrey);
+  z-index: 1;
+}
+.mediabox-image {
+  position: absolute;
+  background: url(../images/jeremy-ricketts-h4zs8fbybq4-unsplash.jpg) no-repeat;
+  top: calc(50% - (47.7rem / 2));
+  left: calc(50% - (47.7rem / 2));
+  width: calc(47.7rem);
+  height: calc(47.7rem);
+  border: .8rem solid var(--borderColor);
+  border-radius: 50%;
+  background-size: cover;
+  z-index: 2;
+}
+.button {
+  height: 3.6rem;
+  width: 9.4rem;
+  border: none;
+  padding: 0;
+  background-color: var(--white);
+  color: var(--reddyBrown);
+  font-size: 3rem;
+  position: absolute;
+  top: calc(0% + 1.9rem);
+  right: calc(0% + 2.4rem);
+}
+.modal-screen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--black85);
+  z-index: 3;
+  border: .1rem var(--brownGrey);
+}
+.modal-wrapper {
+  position: absolute;
+  height: 44.4rem;
+  width: 63.3rem;
+  top: calc(15%);
+  left: calc(50% - (63.3rem / 2));
+  background-color: var(--greyColor);
+  border: .1rem solid var(--brownGrey);
+  z-index: 4;
+}
+.modal-wrapper-text {
+  position: absolute;
+  width: 100%;
+  top: 6.6rem;
+  text-align: center;
+  font-size: 3.6rem;
+  color: var(--textColor);
+}
+.username,
+.password {
+  position: absolute;
+  height: 5.7rem;
+  width: 37rem;
+  color: var(--white);
+  border: none;
+  border-radius: .2rem;
+  box-shadow: 0rem .1rem .2rem var(--shadow);
+  font-size: 2.2rem;
+  color: var(--formText);
+  left: 13.1rem;
+}
+.username {top: 16.5rem;}
+.password {bottom: 13.8rem;}
+.form-button {
+  position: absolute;
+  height: 5.7rem;
+  width: 16.6rem;
+  border: none;
+  background-color: var(--formButtonColor);
+  color: var(--formButtonText);
+  font-size: 2.2rem;
+  left: calc(50% - (16.6rem / 2));
+  bottom: 4rem;
+}
+
+/** DO NOT REMOVE THESE OR YOUR JS WON'T WORK **/
+.modal-screen,
+.modal-wrapper {
+  display: none;
+}
+
+.modal-open .modal-screen,
+.modal-open .modal-wrapper {
+  display: flex;
+}
